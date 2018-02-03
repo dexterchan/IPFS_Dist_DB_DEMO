@@ -36,7 +36,8 @@ the key fields are:
 - Timestamp (to generate the TOTP)
 
 value:
-- URL link of the trade document protected by TOTP of a location
+- URL link of the trade document protected by TOTP of location1
+- URL link of the trade document protected by TOTP of location2
 
 ![IPFS DB workflow supporting 2 locations](./ipfs_DistributedDB.png)
 
