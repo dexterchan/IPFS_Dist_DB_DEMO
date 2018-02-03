@@ -1,4 +1,4 @@
-# IPFS distributed DB example
+# IPFS Decentralized Trade Store example
 
 # Problem
 In some countries, especially in Asia, there is restriction that trade information can only be stored locally wihtin their countries.
