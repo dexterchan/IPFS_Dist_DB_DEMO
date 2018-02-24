@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Web server",
+            "program": "${workspaceFolder}/tutorial/webserver.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "decompress file",
             "program": "${workspaceFolder}/tutorial/decompressStream.js"
         },
