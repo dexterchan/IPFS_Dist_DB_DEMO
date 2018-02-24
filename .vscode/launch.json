@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "decompress file",
+            "program": "${workspaceFolder}/tutorial/decompressStream.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Compress file",
+            "program": "${workspaceFolder}/tutorial/compressStream.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Stream",
+            "program": "${workspaceFolder}/tutorial/Stream.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "eventemitter",
+            "program": "${workspaceFolder}/tutorial/eventemitter.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "observer",
+            "program": "${workspaceFolder}/tutorial/observer.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "read file",
+            "program": "${workspaceFolder}/tutorial/readFile.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "tutorial",
+            "program": "${workspaceFolder}/tutorial/HelloWorld.js",
+            "args":["--ip=0.0.0.0","--port=8000"]
+        }
+    ]
+}
