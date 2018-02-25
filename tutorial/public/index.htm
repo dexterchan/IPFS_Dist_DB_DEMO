@@ -1,0 +1,20 @@
+<html>
+   <head>
+      <title>Sample Page</title>
+   </head>
+   
+   <body>
+      
+
+      <img src="images/cloud.png" alt="clouds">
+
+    <div>Index page,Hello World!</div>
+      <form id="myform" action = "" method = "GET">
+        First Name: <input type = "text" name = "first_name">  <br>
+        Last Name: <input type = "text" name = "last_name">
+        <input type = "submit" value = "Submit">
+        </form>
+<script>document.getElementById("myform").action = 'http://' + document.domain + ':8081/process_get' ;</script>
+   </body>
+
+</html>

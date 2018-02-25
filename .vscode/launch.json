@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "express server",
+            "program": "${workspaceFolder}/tutorial/expressServer.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "web client",
             "program": "${workspaceFolder}/tutorial/webclient.js"
         },
