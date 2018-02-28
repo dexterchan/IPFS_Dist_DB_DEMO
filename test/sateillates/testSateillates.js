@@ -2,8 +2,8 @@ const IPFS = require('ipfs')
 const OrbitDB = require('orbit-db')
 const argv = require('minimist')(process.argv.slice(2));
 
-
-console.log(argv.remoteDB)
+console.log("access db:")
+console.log(argv.db)
 
 
 // OrbitDB uses Pubsub which is an experimental feature
@@ -24,7 +24,7 @@ const ipfsOptions = {
   }
 }
 
-const remoteDB = argv.remoteDB
+const remoteDB = argv.db
 
 // Create IPFS instance
 const ipfs = new IPFS(ipfsOptions)
