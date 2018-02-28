@@ -41,3 +41,24 @@ value:
 
 ![IPFS DB workflow supporting 2 locations](./ipfs_DistributedDB.png)
 
+# Readme
+Setup the node with:
+npm install orbit-db ipfs
+
+
+folder ./test
+Run first node:
+node testFirstDbNode.js 
+copy the address of swarm from first node output
+Example:
+DB address:/orbitdb/QmbEMxyVn6YZopycWg32aX2d37BipPPghdPSLB7x4Rddqb/first-database
+
+First node will insert a record into DB
+example:
+{name:'dog',pos:'erg'}
+
+Run the other nodes:
+node testSateillates.js  --db=/orbitdb/QmbEMxyVn6YZopycWg32aX2d37BipPPghdPSLB7x4Rddqb/first-database 
+read the entries inserted by first node
+get entries...
+{name:'dog',pos:'erg'}

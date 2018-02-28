@@ -39,7 +39,7 @@ ipfs.on('ready', async() => {
   console.log('DB public key:\n' + db.key.getPublic('hex'))
 
   console.log('try insert entries....')
-  await db.put('name', 'hello')
+  await db.put('name', '{name:\'dog\',pos:\'erg\'}')
 
   console.log('get entries...')
   const value = db.get('name')
