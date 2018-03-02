@@ -44,6 +44,7 @@ value:
 # Readme
 Setup the node with:
 npm install orbit-db ipfs
+npm install dateformat
 
 
 folder ./test

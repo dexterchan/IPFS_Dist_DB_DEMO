@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch server",
+            "program": "${workspaceFolder}/server.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Restful server",
             "program": "${workspaceFolder}/tutorial/RestfulServer.js"
         },
