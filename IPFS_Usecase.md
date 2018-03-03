@@ -45,6 +45,7 @@ value:
 Setup the node with:
 npm install orbit-db ipfs
 npm install dateformat
+npm i json-decorator --save
 
 
 folder ./test
