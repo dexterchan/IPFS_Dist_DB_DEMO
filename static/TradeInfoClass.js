@@ -20,7 +20,6 @@ class TradeInfo {
       console.log('Hello, trade is ' + this.TradeId + ', I have security: ' + this.Security+" on "+
         dateFormat(this.TimeStamp, "yyyymmdd-HH:MM:ss.l"));
     }
-    
 
   }
   

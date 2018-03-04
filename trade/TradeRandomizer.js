@@ -1,10 +1,12 @@
-const TradeInfo = require('./static/TradeInfoClass.js');
+const TradeInfo = require('../static/TradeInfoClass.js');
 
-let tradeInfo = new TradeInfo();
+
 class TradeRandomizer{
 
-
+    constructor() {
+    }
     tradeCreation() {
+        let tradeInfo = new TradeInfo();
         tradeInfo.Location1="London";
         tradeInfo.Location2="HongKong";
         tradeInfo.party1="clientLdn";
@@ -22,3 +24,5 @@ class TradeRandomizer{
     
 
 }
+
+module.exports = TradeRandomizer;

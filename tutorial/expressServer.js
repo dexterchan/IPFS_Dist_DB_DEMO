@@ -29,13 +29,14 @@ app.use(multer({dest:__dirname+'/tmp'}).array('singleInputFileName'));
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
     console.log("Got a GET request for the homepage");
-    res.send('Hello GET');
+    //res.send('Hello GET');
+    res.redirect("index.htm");
  })
  
  // This responds a POST request for the homepage
  app.post('/', function (req, res) {
     console.log("Got a POST request for the homepage");
-    res.send('Hello POST');
+    res.redirect("index.htm");
  })
 
  

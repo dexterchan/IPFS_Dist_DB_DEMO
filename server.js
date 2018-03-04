@@ -1,10 +1,16 @@
 const TradeInfo = require('./static/TradeInfoClass.js');
+const TradeRandomizer = require('./trade/TradeRandomizer.js');
 
-// Instantiate trade:
-let tradeInfo = new TradeInfo();
 
 
 function test(){
+    let tradeRandom = new TradeRandomizer();
+
+    t = tradeRandom.tradeCreation();
+    /*
+    // Instantiate trade:
+    let tradeInfo = new TradeInfo();
+
     tradeInfo.Location1="London";
     tradeInfo.Location2="HongKong";
     tradeInfo.party1="clientLdn";
@@ -18,8 +24,10 @@ function test(){
     tradeInfo.price=99.2;
 
     tradeInfo.sayHello();
+    */
 
-    console.log(JSON.stringify(tradeInfo)); 
+
+    console.log(JSON.stringify(t)); 
 }
 
 test()
