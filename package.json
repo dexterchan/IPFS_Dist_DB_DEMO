@@ -1,0 +1,13 @@
+{
+  "name": "IPFS_Dist_DB_DEMO",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+	"ipfs": "~0.28.0",
+    "dateformat": "~3.0.3",
+	"orbit-db": "~0.19.5"
+  }
+}
