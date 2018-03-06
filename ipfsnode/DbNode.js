@@ -1,6 +1,6 @@
 const IPFS = require('ipfs')
 const OrbitDB = require('orbit-db')
-
+var fs = require("fs");
 
 class DbNodeClass{
 
@@ -20,14 +20,14 @@ class DbNodeClass{
           };
           // Create IPFS instance
         this.ipfs = new IPFS(this.ipfsOptions);
-        this.myDBKeyFile=__dirname + "/DBAccess/" + "MasterDBNodeAddress.log";
+        this.myDBKeyFile="/tmp/" + "MasterDBNodeAddress.log";
         this.db=undefined;
     }
 
     registerMasterNode(){
         this.ipfs.on('ready', async() => {
             // Create OrbitDB instance
-            const orbitdb = new OrbitDB(ipfs)
+            const orbitdb = new OrbitDB(this.ipfs)
           
             const access = {
               write: [orbitdb.key.getPublic('hex')]
@@ -35,12 +35,13 @@ class DbNodeClass{
           
             this.db = await orbitdb.keyvalue('first-database', access)
           
-            strData = 'DB address:' + this.db.address.toString()+"\n";
+            var strData = 'DB address:' + this.db.address.toString()+"\n";
             strData+= 'DB keypair:' + this.db.key+"\n";
             strData+='DB public key:' + this.db.key.getPublic('hex')+"\n";
             console.log(strData);
+            console.log(this.myDBKeyFile);
             fs.writeFile(this.myDBKeyFile,strData, 'utf8', function (err) {
-                console.log("DB address Written into :"+ this.myDBKeyFile);
+                console.log("DB address Written");
               }
             );
             await this.db.load()
