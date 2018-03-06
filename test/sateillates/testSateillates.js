@@ -39,19 +39,22 @@ ipfs.on('ready', async () => {
   db.events.on('replicated', () => {
     console.log('get entries...')
     const value = db.get('name')
-    console.log(value)
+    console.log(value);
+    //allIndices = db._index;
+
+    //console.log(allIndices)
   })
 
   console.log('DB address:' + db.address.toString())
   console.log('DB keypair:\n' + db.key)
   console.log('DB public key:\n' + db.key.getPublic('hex'))
-
+/*
 ipfs.swarm.addrs(function (err, addrs) {
   if (err) {
     throw err
   }
   console.log(addrs)
-})
+})*/
   // console.log('try insert entries....')
   // await db.put('name', 'hello')
 
