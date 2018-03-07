@@ -14,6 +14,7 @@ const ipfsOptions = {
       API: '/ip4/127.0.0.1/tcp/4001',
       // Swarm: ['/ip4/0.0.0.0/tcp/4002'],
       Swarm: ['/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'],
+      //Swarm: ['/dns4/localhost/tcp/9090/wss/p2p-websocket-star'],
       Gateway: '/ip4/0.0.0.0/tcp/4003'
     }
   }

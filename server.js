@@ -1,3 +1,10 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+var fs = require("fs");
+
+app.use(bodyParser.json({ type: 'application/json' }));
+
 const TradeInfo = require('./static/TradeInfoClass.js');
 const TradeRandomizer = require('./trade/TradeRandomizer.js');
 const DbNodePackage = require('./ipfsnode/DbNode.js');
@@ -16,34 +23,31 @@ if(argv.address === undefined ){
 function connectDB(){
     if(argv.address === undefined){
         DbNodeClass.registerMasterNode();
+    }else{
+        DbNodeClass.connectMasterNode(argv.address);
     }
 }
+
+
+
+app.get('/randomTrade', function (req, res) {
+    let tradeRandom = new TradeRandomizer();
+
+    t = tradeRandom.tradeCreation();
+    console.log(JSON.stringify(t)); 
+    strTrade=JSON.stringify(t);
+    keyid = t.genKey();
+
+    await db.put(keyid, strTrade);
+
+ })
 
 function test(){
     let tradeRandom = new TradeRandomizer();
 
     t = tradeRandom.tradeCreation();
-    /*
-    // Instantiate trade:
-    let tradeInfo = new TradeInfo();
-
-    tradeInfo.Location1="London";
-    tradeInfo.Location2="HongKong";
-    tradeInfo.party1="clientLdn";
-    tradeInfo.party2="clientHK";
-    tradeInfo.TradeId="000001";
-    tradeInfo.TradeVersion=1;
-    tradeInfo.TimeStamp=new Date().getTime();
-    tradeInfo.Direction="sell";
-    tradeInfo.Security="ABCD";
-    tradeInfo.quantity=1000000000;
-    tradeInfo.price=99.2;
-
-    tradeInfo.sayHello();
-    */
-
-
     console.log(JSON.stringify(t)); 
+    return JSON.stringify(t);
 }
 
 connectDB();

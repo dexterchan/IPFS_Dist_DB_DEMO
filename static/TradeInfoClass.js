@@ -14,11 +14,16 @@ class TradeInfo {
       this.Security="ABC";
       this.quantity=0;
       this.price=0.00;
+      this.delimiter="|";
     }
     
     sayHello() {
       console.log('Hello, trade is ' + this.TradeId + ', I have security: ' + this.Security+" on "+
         dateFormat(this.TimeStamp, "yyyymmdd-HH:MM:ss.l"));
+    }
+    genKey(){
+      str = this.Location1+this.delimiter+this.Location2+this.delimiter+this.TradeId+this.delimiter+this.TradeVersion+this.delimiter+this.TimeStamp;
+      return str;
     }
 
   }

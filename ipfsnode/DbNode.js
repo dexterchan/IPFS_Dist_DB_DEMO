@@ -22,18 +22,19 @@ class DbNodeClass{
         this.ipfs = new IPFS(this.ipfsOptions);
         this.myDBKeyFile="/tmp/" + "MasterDBNodeAddress.log";
         this.db=undefined;
+        this.isReady=false;
     }
 
     registerMasterNode(){
         this.ipfs.on('ready', async() => {
             // Create OrbitDB instance
-            const orbitdb = new OrbitDB(this.ipfs)
+            const orbitdb = new OrbitDB(this.ipfs);
           
             const access = {
               write: [orbitdb.key.getPublic('hex')]
             }
           
-            this.db = await orbitdb.keyvalue('first-database', access)
+            this.db = await orbitdb.keyvalue('first-database', access);
           
             var strData = 'DB address:' + this.db.address.toString()+"\n";
             strData+= 'DB keypair:' + this.db.key+"\n";
@@ -44,12 +45,21 @@ class DbNodeClass{
                 console.log("DB address Written");
               }
             );
-            await this.db.load()
+            await this.db.load();
+            this.isReady=true;
         });
         
     }
     connectMasterNode(address){
-
+      this.ipfs.on('ready', async() => {
+        // Create OrbitDB instance
+        const orbitdb = new OrbitDB(this.ipfs);
+      
+        console.log('Connecting to database');
+        this.db = await orbitdb.open(address);
+        console.log('Database connected to'+address);
+      
+      }
     }
 
 
